@@ -5,8 +5,19 @@
     "TASKBOARD": "Work Board",
     "CONTACT": "Contact",
     "SIGNIN": "SignIn/SignUp",
+    "SIGNIN1": "SignIn",
     "MYACCOUNT": "My Account",
     "LOGOUT": "Log Out",
     "BESTPRODUCTS": "Our Best Products",
-    "VIEWALL": "See More"
+    "VIEWALL": "See More",
+    "PRICING": "Pricing",
+    "LOGIN": "Login",
+    "GLOGIN": "Sign in with Google",
+    "REGISTER": "Register",
+    "HREGISTER": "Register Here",
+    "NEWUSER": "New User",
+    "PASSWORD": "Password",
+    "EMAILADDRESS": "Email Address",
+    "ENTEREMAIL": "Enter Email",
+    "SEEMORE": "See More"
 }

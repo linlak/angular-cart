@@ -27,9 +27,12 @@
                 <a class="nav-link" href="jaascript:;;" [routerLink]="[ '/task-board/tasks' ]">{{
           this.translate.data["TASKBOARD"] | translate}}</a>
             </li>
-            <!-- <li class="nav-item">
-        <a class="nav-link" href="#">Pricing</a>
-      </li> -->
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="[ '/task-board/tasks' , 1 , 'detail', 3234 ]">
+                {{
+          this.translate.data["PRICING"] | translate}}
+        </a>
+            </li>
         </ul>
         <!-- Links -->
 

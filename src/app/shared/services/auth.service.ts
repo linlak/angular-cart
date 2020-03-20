@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, BehaviorSubject } from 'rxjs';
 import { User } from '../models/user';
 import { Router } from '@angular/router';
 import { UserService } from './user.service';
 
 @Injectable()
 export class AuthService {
-  user: Observable<User> = new Observable<User>(null);
+  user: BehaviorSubject<User> = new BehaviorSubject<User>(null);
   userDetails: User = null;
   loggedUser;
   dbUser;
@@ -14,24 +14,15 @@ export class AuthService {
     private router: Router,
     private userService: UserService
   ) {
-    // this.user = firebaseAuth.authState;
     this.dbUser = new User();
     this.user.subscribe(user => {
       if (user) {
         this.userDetails = user;
-        // userService
-        //   .isAdmin(this.userDetails.emailId)
-        //   .snapshotChanges()
-        //   .subscribe(data => {
-        //     data.forEach(el => {
-        //       const y = el.payload.toJSON();
-        //       this.dbUser = y;
-        //     });
-        //   });
       } else {
         this.userDetails = null;
       }
     });
+    this.user.next(this.getLoggedInUser());
   }
 
   isLoggedIn(): boolean {
@@ -42,40 +33,28 @@ export class AuthService {
 
   logout() {
     this.loggedUser = null;
-    // this.firebaseAuth.auth.signOut().then(res => this.router.navigate(['/']));
   }
 
   createUserWithEmailAndPassword(emailID: string, password: string) {
-    // return this.firebaseAuth.auth.createUserWithEmailAndPassword(
-    //   emailID,
-    //   password
-    // );
   }
 
   getLoggedInUser(): User {
     const loggedUser: User = new User();
-    // const user = this.firebaseAuth.auth.currentUser;
-
-    // if (user) {
-    //   this.userDetails = user;
-    //   if (user != null) {
-    //     loggedUser.$key = user.uid;
-    //     loggedUser.userName = user.displayName;
-    //     loggedUser.emailId = user.email;
-    //     loggedUser.phoneNumber = user.phoneNumber;
-    //     loggedUser.avatar = user.photoURL;
-    //     loggedUser.isAdmin = this.dbUser['isAdmin'];
-    //   }
-    // } else {
-      // this.userDetails = null;
-    // }
-
+    loggedUser.avatar = '';
+    loggedUser.createdOn = Date.now().toString();
+    loggedUser.emailId = 'ugsalons@gmail.com';
+    loggedUser.isAdmin = true;
+    loggedUser.userName = 'linlak';
+    loggedUser.phoneNumber = '256751921465';
+    loggedUser.location = {
+      lat: 123.34332,
+      lon: 1432.9804
+    };
     return loggedUser;
   }
 
   isAdmin(): boolean {
     const user = this.getLoggedInUser();
-    console.log('loggedUSer', user);
     if (user != null) {
       if (user.isAdmin === true) {
         return true;
@@ -87,8 +66,5 @@ export class AuthService {
   }
 
   signInWithGoogle() {
-    // return this.firebaseAuth.auth.signInWithPopup(
-    //   new firebase.auth.GoogleAuthProvider()
-    // );
   }
 }

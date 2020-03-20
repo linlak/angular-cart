@@ -1,4 +1,6 @@
-export const tasks = [
+import { Task } from '../models/task';
+
+export const tasks: Task[] = [
     {
         id: 0,
         guid: 'f2d381ca-6f1c-4e68-ac72-fff973ab3701',

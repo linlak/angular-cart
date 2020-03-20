@@ -40,11 +40,11 @@ export class BillingDetailsComponent implements OnInit {
 		const data = form.value;
 
 		data['emailId'] = this.userDetails.emailId;
-		data['userId'] = this.userDetails.$key;
+		data['userId'] = this.userDetails.id;
 		let totalPrice = 0;
 		const products = [];
 		this.products.forEach((product) => {
-			delete product['$key'];
+			delete product['id'];
 			totalPrice += product.productPrice;
 			products.push(product);
 		});

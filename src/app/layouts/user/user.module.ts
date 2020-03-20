@@ -12,7 +12,11 @@ import { UserAccountComponent } from './user-account/user-account.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 
 @NgModule({
-imports: [CommonModule, SharedModule, RouterModule.forChild(UserRoutes)],
+imports: [
+    CommonModule,
+    SharedModule,
+    RouterModule.forChild(UserRoutes),
+],
 declarations: [UserComponent, UserAccountComponent],
 providers: [],
 schemas: [NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA]

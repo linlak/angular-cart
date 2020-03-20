@@ -53,11 +53,9 @@ return this.http.get('/api/products/' + key)
 }
 
 updateProduct(data: Product) {
-// this.products.update(data.$key, data);
 }
 
 deleteProduct(key: string) {
-// this.products.remove(key);
 }
 
 /*
@@ -66,11 +64,6 @@ deleteProduct(key: string) {
 
 // Get Favourite Product based on userId
 getUsersFavouriteProduct() {
-// const user = this.authService.getLoggedInUser();
-// this.favouriteProducts = this.db.list('favouriteProducts', (ref) =>
-// ref.orderByChild('userId').equalTo(user.$key)
-// );
-// return this.favouriteProducts;
 }
 
 // Adding New product to favourite if logged else to localStorage

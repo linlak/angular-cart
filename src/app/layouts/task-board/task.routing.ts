@@ -8,6 +8,10 @@ const routes: Routes = [{
         {
             path: '',
             component: TaskBoardComponent
+        },
+        {
+            path: ':userId/detail/:id',
+            component: TaskBoardComponent
         }
     ]
 }];

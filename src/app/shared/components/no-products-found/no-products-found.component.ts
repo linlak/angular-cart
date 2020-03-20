@@ -6,10 +6,8 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./no-products-found.component.scss']
 })
 export class NoProductsFoundComponent implements OnInit {
-  // tslint:disable-next-line:no-input-rename
-  @Input('title') title: string;
-  // tslint:disable-next-line:no-input-rename
-  @Input('description') description: string;
+  @Input() title: string;
+  @Input() description: string;
   constructor() {}
 
   ngOnInit() {}

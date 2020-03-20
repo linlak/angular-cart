@@ -1,5 +1,5 @@
 export class User {
-  $key: string;
+  id?: number;
   userName: string;
   emailId: string;
   password: string;
@@ -14,7 +14,7 @@ export class User {
 }
 
 export class UserDetail {
-  $key: string;
+  id?: number;
   firstName: string;
   lastName: string;
   userName: string;

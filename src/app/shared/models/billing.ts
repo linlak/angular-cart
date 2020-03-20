@@ -1,5 +1,5 @@
 export class Billing {
-  $key: string;
+  id: number;
   firstName: string;
   lastName: string;
   emailId: string;

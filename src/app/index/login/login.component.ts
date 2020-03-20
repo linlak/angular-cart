@@ -5,6 +5,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { UserService } from '../../shared/services/user.service';
 import { AuthService } from '../../shared/services/auth.service';
 import { User } from '../../shared/models/user';
+import { TranslateService } from 'src/app/shared/services/translate.service';
 declare var $: any;
 @Component({
 selector: 'app-login',
@@ -27,7 +28,8 @@ private authService: AuthService,
 private userService: UserService,
 private toastService: ToastrService,
 private router: Router,
-private route: ActivatedRoute
+private route: ActivatedRoute,
+public translate: TranslateService
 ) {
 this.createUser = new User();
 }
